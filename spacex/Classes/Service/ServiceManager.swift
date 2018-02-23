@@ -17,7 +17,7 @@ typealias NetworkFailureBlock = (_ error: Error?, _ responseModel: ResponseModel
 
 class ServiceManager {
 
-    func request(target: RequestTarget, success: NetworkSuccessBlock? = nil, failure: NetworkFailureBlock? = nil) {
+    static func request(target: RequestTarget, success: NetworkSuccessBlock? = nil, failure: NetworkFailureBlock? = nil) {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
