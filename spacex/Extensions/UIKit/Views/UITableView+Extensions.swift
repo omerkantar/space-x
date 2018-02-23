@@ -41,7 +41,7 @@ extension UITableView {
     enum CellType: ViewCellTypeProtocol {
         case coffee
         case launch
-        
+        // Acikcasi identifier ile nibName ayni string kullanilmasinda hic bir sakinca gormedigimden boyle yaptim istenildigi vakit degistiriline bilinir 
         var identifier: String {
             switch self {
             case .launch:

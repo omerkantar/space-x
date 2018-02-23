@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LauchTableViewCell" customModule="spacex" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="LauchTableViewCell" customModule="spacex" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -28,15 +28,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFx-wp-3Lg">
                         <rect key="frame" x="8" y="8" width="304" height="183.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8V-Rw-FAL">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="128"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8V-Rw-FAL">
+                                <rect key="frame" x="3" y="3" width="298" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kRS-hc-Hre">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="128"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kRS-hc-Hre">
+                                        <rect key="frame" x="0.0" y="0.0" width="298" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="kRS-hc-Hre" firstAttribute="top" secondItem="F8V-Rw-FAL" secondAttribute="top" id="2m1-l8-R4g"/>
                                     <constraint firstItem="kRS-hc-Hre" firstAttribute="leading" secondItem="F8V-Rw-FAL" secondAttribute="leading" id="8A9-17-xn3"/>
@@ -46,13 +46,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-bx-3IY">
-                                <rect key="frame" x="8" y="136" width="45.5" height="25"/>
+                                <rect key="frame" x="8" y="139" width="45.5" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 03.02.2014 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqn-mQ-ROd">
-                                <rect key="frame" x="219" y="138" width="77" height="22"/>
+                                <rect key="frame" x="219" y="141" width="77" height="22"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="8Lx-tc-KMW"/>
@@ -64,9 +64,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="F8V-Rw-FAL" firstAttribute="leading" secondItem="mFx-wp-3Lg" secondAttribute="leading" id="7fq-jo-q34"/>
-                            <constraint firstAttribute="trailing" secondItem="F8V-Rw-FAL" secondAttribute="trailing" id="AVE-1B-koL"/>
-                            <constraint firstItem="F8V-Rw-FAL" firstAttribute="top" secondItem="mFx-wp-3Lg" secondAttribute="top" id="B8l-T0-X1T"/>
+                            <constraint firstItem="F8V-Rw-FAL" firstAttribute="leading" secondItem="mFx-wp-3Lg" secondAttribute="leading" constant="3" id="7fq-jo-q34"/>
+                            <constraint firstAttribute="trailing" secondItem="F8V-Rw-FAL" secondAttribute="trailing" constant="3" id="AVE-1B-koL"/>
+                            <constraint firstItem="F8V-Rw-FAL" firstAttribute="top" secondItem="mFx-wp-3Lg" secondAttribute="top" constant="3" id="B8l-T0-X1T"/>
                             <constraint firstAttribute="trailing" secondItem="jqn-mQ-ROd" secondAttribute="trailing" constant="8" id="UQt-nt-yBj"/>
                             <constraint firstItem="iaf-bx-3IY" firstAttribute="leading" secondItem="mFx-wp-3Lg" secondAttribute="leading" constant="8" id="h6k-gu-jbl"/>
                             <constraint firstItem="iaf-bx-3IY" firstAttribute="top" secondItem="F8V-Rw-FAL" secondAttribute="bottom" constant="8" id="izZ-Cb-Ha1"/>
@@ -83,9 +83,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="containerView" destination="F8V-Rw-FAL" id="wbN-d8-h4c"/>
                 <outlet property="dateLabel" destination="jqn-mQ-ROd" id="amu-cQ-4I2"/>
-                <outlet property="highlightedView" destination="F8V-Rw-FAL" id="EyY-k8-DCh"/>
+                <outlet property="highlightedView" destination="mFx-wp-3Lg" id="Fpv-Rh-eGn"/>
+                <outlet property="imgContainerView" destination="F8V-Rw-FAL" id="Xwi-qa-JDH"/>
                 <outlet property="imgView" destination="kRS-hc-Hre" id="RuY-fM-eH4"/>
                 <outlet property="rocketNameLabel" destination="iaf-bx-3IY" id="ZN1-g9-o36"/>
             </connections>
