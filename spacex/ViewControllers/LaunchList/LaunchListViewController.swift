@@ -61,7 +61,7 @@ extension LaunchListViewController: UITableViewDelegate {
 // MARK: - Load Data
 extension LaunchListViewController {
     func loadData() {
-        request(target: .launches, success: { (model) in
+        request(target: .launches, loadingParentView: self.tableView, success: { (model) in
             
         }) { (error, model) in
             

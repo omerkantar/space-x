@@ -28,6 +28,9 @@
 		4E8C24292040AFF600A937FE /* LauchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C24272040AFF600A937FE /* LauchTableViewCell.xib */; };
 		4E8C242B2040B40600A937FE /* LaunchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C242A2040B40600A937FE /* LaunchCellViewModel.swift */; };
 		4E8C242D2040B50700A937FE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C242C2040B50700A937FE /* String+Extensions.swift */; };
+		4E8C24302040C78000A937FE /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C242F2040C78000A937FE /* LaunchModel.swift */; };
+		4E8C24322040C85A00A937FE /* LinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C24312040C85A00A937FE /* LinksModel.swift */; };
+		4E8C24342040C86C00A937FE /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C24332040C86C00A937FE /* RocketModel.swift */; };
 		BA12710698C1018D6D4BACCB /* Pods_spacex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */; };
 		D4C6B8A030E6A141804432B6 /* Pods_spacexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +85,9 @@
 		4E8C24272040AFF600A937FE /* LauchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LauchTableViewCell.xib; sourceTree = "<group>"; };
 		4E8C242A2040B40600A937FE /* LaunchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellViewModel.swift; sourceTree = "<group>"; };
 		4E8C242C2040B50700A937FE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4E8C242F2040C78000A937FE /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
+		4E8C24312040C85A00A937FE /* LinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksModel.swift; sourceTree = "<group>"; };
+		4E8C24332040C86C00A937FE /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA29E1320BC48DAD8A8B1EAF /* Pods-spacexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spacexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spacexTests/Pods-spacexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +243,9 @@
 		4E8C240320409F6100A937FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C24332040C86C00A937FE /* RocketModel.swift */,
+				4E8C24312040C85A00A937FE /* LinksModel.swift */,
+				4E8C242F2040C78000A937FE /* LaunchModel.swift */,
 				4E8C240F2040A1ED00A937FE /* ResponseModel.swift */,
 			);
 			path = Models;
@@ -661,10 +670,13 @@
 			files = (
 				4E8C241D2040AC3800A937FE /* LaunchListViewController.swift in Sources */,
 				4E8C242D2040B50700A937FE /* String+Extensions.swift in Sources */,
+				4E8C24302040C78000A937FE /* LaunchModel.swift in Sources */,
 				4E8C24212040AE7700A937FE /* CellProtocol.swift in Sources */,
 				4E8C24282040AFF600A937FE /* LauchTableViewCell.swift in Sources */,
+				4E8C24342040C86C00A937FE /* RocketModel.swift in Sources */,
 				4E8C240E2040A09000A937FE /* RequestTarget.swift in Sources */,
 				4E8C23CF2040979A00A937FE /* AppDelegate.swift in Sources */,
+				4E8C24322040C85A00A937FE /* LinksModel.swift in Sources */,
 				4E8C241F2040ADEA00A937FE /* UITableView+Extensions.swift in Sources */,
 				4E8C24102040A1ED00A937FE /* ResponseModel.swift in Sources */,
 				4E8C240C2040A01800A937FE /* ServiceManager.swift in Sources */,
