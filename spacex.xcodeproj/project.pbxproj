@@ -14,6 +14,9 @@
 		4E8C23D92040979A00A937FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C23D72040979A00A937FE /* LaunchScreen.storyboard */; };
 		4E8C23E42040979A00A937FE /* spacexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23E32040979A00A937FE /* spacexTests.swift */; };
 		4E8C23EF2040979A00A937FE /* spacexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C23EE2040979A00A937FE /* spacexUITests.swift */; };
+		4E8C240C2040A01800A937FE /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C240B2040A01800A937FE /* ServiceManager.swift */; };
+		4E8C240E2040A09000A937FE /* RequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C240D2040A09000A937FE /* RequestTarget.swift */; };
+		4E8C24102040A1ED00A937FE /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C240F2040A1ED00A937FE /* ResponseModel.swift */; };
 		BA12710698C1018D6D4BACCB /* Pods_spacex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */; };
 		D4C6B8A030E6A141804432B6 /* Pods_spacexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +57,9 @@
 		4E8C23EA2040979A00A937FE /* spacexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spacexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8C23EE2040979A00A937FE /* spacexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacexUITests.swift; sourceTree = "<group>"; };
 		4E8C23F02040979A00A937FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8C240B2040A01800A937FE /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		4E8C240D2040A09000A937FE /* RequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTarget.swift; sourceTree = "<group>"; };
+		4E8C240F2040A1ED00A937FE /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA29E1320BC48DAD8A8B1EAF /* Pods-spacexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spacexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spacexTests/Pods-spacexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +200,8 @@
 		4E8C240220409F5C00A937FE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C240B2040A01800A937FE /* ServiceManager.swift */,
+				4E8C240D2040A09000A937FE /* RequestTarget.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 		4E8C240320409F6100A937FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C240F2040A1ED00A937FE /* ResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -567,7 +576,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8C240E2040A09000A937FE /* RequestTarget.swift in Sources */,
 				4E8C23CF2040979A00A937FE /* AppDelegate.swift in Sources */,
+				4E8C24102040A1ED00A937FE /* ResponseModel.swift in Sources */,
+				4E8C240C2040A01800A937FE /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,7 +753,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arabam.interview.spacex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -757,7 +769,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arabam.interview.spacex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
