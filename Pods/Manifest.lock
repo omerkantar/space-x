@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - Moya (11.0.0):
+    - Moya/Core (= 11.0.0)
+  - Moya/Core (11.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - ObjectMapper (3.1.0)
+  - Result (3.2.4)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 3.3)
+  - Moya (~> 11.0)
+  - ObjectMapper (~> 3.1)
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Moya: be29766339783963a70d1279d69c891ab3a1393c
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+
+PODFILE CHECKSUM: b4c6969ac789dafdc869790b31cb457bb33d0365
+
+COCOAPODS: 1.3.1
