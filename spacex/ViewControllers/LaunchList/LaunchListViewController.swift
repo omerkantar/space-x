@@ -20,7 +20,7 @@ class LaunchListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildTableView()
-        
+        loadData()
     }
 
     func buildTableView() {
@@ -54,13 +54,17 @@ extension LaunchListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension LaunchListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 245.0
+        return 200.0
     }
 }
 
 // MARK: - Load Data
 extension LaunchListViewController {
     func loadData() {
-        
+        request(target: .launches, success: { (model) in
+            
+        }) { (error, model) in
+            
+        }
     }
 }

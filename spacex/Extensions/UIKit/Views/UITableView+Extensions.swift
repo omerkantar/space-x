@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Build
 extension UITableView {
     func build() {
+        self.separatorStyle = .none
         self.tableFooterView = UIView(frame: .zero)
         self.tableHeaderView = UIView(frame: .zero)
     }

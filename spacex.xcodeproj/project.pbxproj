@@ -175,6 +175,7 @@
 		4E8C23FC20409CB200A937FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4E8C242E2040BF0C00A937FE /* Detail */,
 				4E8C240120409CDD00A937FE /* LaunchList */,
 				4E8C240020409CD800A937FE /* Common */,
 			);
@@ -323,6 +324,13 @@
 				4E8C24272040AFF600A937FE /* LauchTableViewCell.xib */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		4E8C242E2040BF0C00A937FE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		AE2DFAACB96DC9C8F562B92D /* Frameworks */ = {

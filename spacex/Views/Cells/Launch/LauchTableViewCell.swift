@@ -25,7 +25,6 @@ class LauchTableViewCell: UITableViewCell {
         imgContainerView.layer.cornerRadius = 5.0
         dateLabel.layer.cornerRadius = 3.0
         dateLabel.layer.masksToBounds = true
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

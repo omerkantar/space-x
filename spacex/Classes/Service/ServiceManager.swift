@@ -32,8 +32,15 @@ class ServiceManager {
                     try moyaResponse.filterSuccessfulStatusCodes()
                     let data = try moyaResponse.mapJSON()
                     if let response = Mapper<ResponseModel>().map(JSONObject: data) {
+                        response.statusCode = statusCode
                         if let block = success {
                             block(response)
+                        }
+                    } else if data is Array<Any> {
+                        let model = ResponseModel()
+                        model.data = data
+                        if let block = success {
+                            block(model)
                         }
                     } else {
                         if let block = failure {
