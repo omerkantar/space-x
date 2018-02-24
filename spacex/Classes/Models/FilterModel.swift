@@ -9,18 +9,34 @@
 import UIKit
 
 class FilterModel: NSObject {
+    
     var sortType: SortType = .none
-    var selectedYears: [String]?
+    var years = [String]()
+    var totalCount: Int = 0
     
     func remove() {
         sortType = .none
-        selectedYears = [String]()
+        years.removeAll()
+    }
+    
+}
+
+extension FilterModel {
+    enum SortType {
+        case none
+        case ascending
+        case descending
+        
+        var text: String {
+            switch self {
+            case .none:
+                return "Any"
+            case .ascending:
+                return "Ascending"
+            case .descending:
+                return "Descending"
+            }
+        }
     }
 }
 
-
-enum SortType {
-    case none
-    case ascending
-    case descending
-}

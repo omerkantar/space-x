@@ -11,6 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Medium</string>
         </array>
     </customFonts>
@@ -61,6 +62,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Filter"/>
+                                <connections>
+                                    <action selector="filterButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="DrA-QQ-Hc3"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -106,27 +110,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="en2-dj-uGm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="en2-dj-uGm">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCd-e1-g7o">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M6-U9-ibC">
+                                        <rect key="frame" x="136" y="5.5" width="103" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                        <state key="normal" title="Remove Filters">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="removeFilterButtonTapped" destination="geu-M4-6Zv" eventType="touchUpInside" id="ufm-cl-798"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK3-eq-KBR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="Whg-7c-GBm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95947698417473526" green="0.95484182966181386" blue="0.96411213868765666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="26s-5S-UuX"/>
+                                    <constraint firstItem="1M6-U9-ibC" firstAttribute="centerY" secondItem="GCd-e1-g7o" secondAttribute="centerY" id="DlW-Kw-PeT"/>
+                                    <constraint firstItem="BK3-eq-KBR" firstAttribute="top" secondItem="GCd-e1-g7o" secondAttribute="top" id="OXy-rS-hVk"/>
+                                    <constraint firstItem="1M6-U9-ibC" firstAttribute="centerX" secondItem="GCd-e1-g7o" secondAttribute="centerX" id="RCN-Zm-uEK"/>
+                                    <constraint firstItem="BK3-eq-KBR" firstAttribute="leading" secondItem="GCd-e1-g7o" secondAttribute="leading" id="ixl-qg-sib"/>
+                                    <constraint firstAttribute="trailing" secondItem="BK3-eq-KBR" secondAttribute="trailing" id="s34-ru-Tfn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GCd-e1-g7o" firstAttribute="leading" secondItem="CAb-Xt-NWg" secondAttribute="leading" id="0oP-kP-HNf"/>
                             <constraint firstItem="CAb-Xt-NWg" firstAttribute="bottom" secondItem="en2-dj-uGm" secondAttribute="bottom" id="Nvx-Vb-w0a"/>
                             <constraint firstItem="en2-dj-uGm" firstAttribute="leading" secondItem="CAb-Xt-NWg" secondAttribute="leading" id="NzS-0X-bdX"/>
+                            <constraint firstItem="GCd-e1-g7o" firstAttribute="trailing" secondItem="CAb-Xt-NWg" secondAttribute="trailing" id="R8k-o9-QLq"/>
                             <constraint firstItem="CAb-Xt-NWg" firstAttribute="trailing" secondItem="en2-dj-uGm" secondAttribute="trailing" id="TAQ-SO-idd"/>
                             <constraint firstItem="en2-dj-uGm" firstAttribute="top" secondItem="CAb-Xt-NWg" secondAttribute="top" id="lpJ-2q-M4H"/>
+                            <constraint firstItem="CAb-Xt-NWg" firstAttribute="bottom" secondItem="GCd-e1-g7o" secondAttribute="bottom" id="qkA-mU-vDY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CAb-Xt-NWg"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="eGH-Vw-nuJ">
                         <barButtonItem key="backBarButtonItem" title=" " id="fZy-If-uoJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bottomView" destination="GCd-e1-g7o" id="G1o-ym-p3M"/>
+                        <outlet property="removeFilterButton" destination="1M6-U9-ibC" id="raE-lj-rl7"/>
+                        <outlet property="tableView" destination="en2-dj-uGm" id="4ZK-z3-fx2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpc-tU-PmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="133"/>
+            <point key="canvasLocation" x="1548" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

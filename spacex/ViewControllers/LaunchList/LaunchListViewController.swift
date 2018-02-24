@@ -24,7 +24,6 @@ class LaunchListViewController: UIViewController {
     }
 
     func buildTableView() {
-    
         tableView.build()
         tableView.register(.launch)
         tableView.dataSource = self

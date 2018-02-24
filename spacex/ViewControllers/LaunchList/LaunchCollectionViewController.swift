@@ -39,13 +39,32 @@ class LaunchCollectionViewController: CommonCollectionViewController {
         }
         return (vm, .launch)
     }
+    
+    // MARK: - Actions
+    @IBAction func filterButtonTapped() {
+        if viewModel.allLaunchs == nil {
+            return
+        }
+        let filterVC = self.storyboard?.instantiateViewController(withIdentifier: "filterVC") as! FilterViewController
+        filterVC.delegate = self
+        self.pushVC(filterVC)
+    }
 }
+
 
 // MARK: - UICollectionViewDelegate
 extension LaunchCollectionViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
+    }
+}
+
+// MARK: - FilterViewDelegate
+extension LaunchCollectionViewController: FilterViewDelegate {
+    func filterViewController(_ vc: FilterViewController, didChangedFilter isRemoved: Bool) {
+        self.viewModel.updateFilterCellVMs()
+        self.collectionView.reloadData()
     }
 }
 

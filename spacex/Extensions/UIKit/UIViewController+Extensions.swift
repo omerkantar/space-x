@@ -8,6 +8,16 @@
 
 import UIKit
 
+// MARK: Push
+extension UIViewController {
+    func pushVC(_ vc: UIViewController, animated: Bool = true) {
+        self.navigationController?.pushViewController(vc, animated: animated)
+    }
+    
+    func popVC(_ animated: Bool = true) {
+        self.navigationController?.popViewController(animated: animated)
+    }
+}
 
 // MARK: - Network
 extension UIViewController {

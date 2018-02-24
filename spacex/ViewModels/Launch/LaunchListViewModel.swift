@@ -25,4 +25,15 @@ class LaunchListViewModel {
             }
         }
     }
+    
+    func updateFilterCellVMs() {
+        guard let allLaunchs = allLaunchs else {
+            return
+        }
+        let list = filterManager.filter(launchs: allLaunchs)
+        filteredCellVMs = [LaunchCellViewModel]()
+        for item in list {
+            filteredCellVMs?.append(LaunchCellViewModel(launch: item))
+        }
+    }
 }

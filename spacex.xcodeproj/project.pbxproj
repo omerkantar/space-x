@@ -42,6 +42,10 @@
 		4EF539D02041F0C100AE9B31 /* CommonCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539CF2041F0C100AE9B31 /* CommonCollectionViewController.swift */; };
 		4EF539D22041F13100AE9B31 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539D12041F13100AE9B31 /* UICollectionView+Extensions.swift */; };
 		4EF539D42041FA2900AE9B31 /* LaunchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539D32041FA2900AE9B31 /* LaunchCollectionViewController.swift */; };
+		4EF539D72042060D00AE9B31 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539D62042060D00AE9B31 /* FilterViewModel.swift */; };
+		4EF539D92042064800AE9B31 /* FilterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539D82042064800AE9B31 /* FilterCellViewModel.swift */; };
+		4EF539DE204217F100AE9B31 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539DC204217F100AE9B31 /* FilterTableViewCell.swift */; };
+		4EF539DF204217F100AE9B31 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF539DD204217F100AE9B31 /* FilterTableViewCell.xib */; };
 		BA12710698C1018D6D4BACCB /* Pods_spacex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */; };
 		D4C6B8A030E6A141804432B6 /* Pods_spacexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +114,10 @@
 		4EF539CF2041F0C100AE9B31 /* CommonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCollectionViewController.swift; sourceTree = "<group>"; };
 		4EF539D12041F13100AE9B31 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		4EF539D32041FA2900AE9B31 /* LaunchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCollectionViewController.swift; sourceTree = "<group>"; };
+		4EF539D62042060D00AE9B31 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		4EF539D82042064800AE9B31 /* FilterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModel.swift; sourceTree = "<group>"; };
+		4EF539DC204217F100AE9B31 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		4EF539DD204217F100AE9B31 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
 		9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA29E1320BC48DAD8A8B1EAF /* Pods-spacexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spacexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spacexTests/Pods-spacexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,7 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				4E8C241B2040AA4300A937FE /* Cells */,
-				4E8C241A2040AA1A00A937FE /* LaunchList */,
+				4E8C241A2040AA1A00A937FE /* Launch */,
+				4EF539D62042060D00AE9B31 /* FilterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -331,12 +340,12 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		4E8C241A2040AA1A00A937FE /* LaunchList */ = {
+		4E8C241A2040AA1A00A937FE /* Launch */ = {
 			isa = PBXGroup;
 			children = (
 				4EF539BF2041D90800AE9B31 /* LaunchListViewModel.swift */,
 			);
-			path = LaunchList;
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		4E8C241B2040AA4300A937FE /* Cells */ = {
@@ -344,6 +353,7 @@
 			children = (
 				4E8C24222040AE9200A937FE /* BaseCellViewModel.swift */,
 				4E8C242A2040B40600A937FE /* LaunchCellViewModel.swift */,
+				4EF539D82042064800AE9B31 /* FilterCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -351,8 +361,8 @@
 		4E8C24242040AF8C00A937FE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4EF539DA204217D700AE9B31 /* Table */,
 				4EF539CA2041EB6E00AE9B31 /* Collection */,
-				4E8C24252040AFC900A937FE /* Launch */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -389,6 +399,24 @@
 				4EF539CC2041EB8E00AE9B31 /* LaunchCollectionViewCell.xib */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		4EF539DA204217D700AE9B31 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				4EF539DB204217E000AE9B31 /* Filter */,
+				4E8C24252040AFC900A937FE /* Launch */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		4EF539DB204217E000AE9B31 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				4EF539DC204217F100AE9B31 /* FilterTableViewCell.swift */,
+				4EF539DD204217F100AE9B31 /* FilterTableViewCell.xib */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		AE2DFAACB96DC9C8F562B92D /* Frameworks */ = {
@@ -531,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E8C23D92040979A00A937FE /* LaunchScreen.storyboard in Resources */,
+				4EF539DF204217F100AE9B31 /* FilterTableViewCell.xib in Resources */,
 				4E8C24192040A7A900A937FE /* LoadingView.xib in Resources */,
 				4E8C23D62040979A00A937FE /* Assets.xcassets in Resources */,
 				4E8C23D42040979A00A937FE /* Main.storyboard in Resources */,
@@ -730,6 +759,7 @@
 				4EF539C72041E04D00AE9B31 /* FilterManager.swift in Sources */,
 				4E8C24282040AFF600A937FE /* LauchTableViewCell.swift in Sources */,
 				4E8C24342040C86C00A937FE /* RocketModel.swift in Sources */,
+				4EF539DE204217F100AE9B31 /* FilterTableViewCell.swift in Sources */,
 				4E8C240E2040A09000A937FE /* RequestTarget.swift in Sources */,
 				4EF539D22041F13100AE9B31 /* UICollectionView+Extensions.swift in Sources */,
 				4E8C23CF2040979A00A937FE /* AppDelegate.swift in Sources */,
@@ -737,12 +767,14 @@
 				4E8C24322040C85A00A937FE /* LinksModel.swift in Sources */,
 				4E8C241F2040ADEA00A937FE /* UITableView+Extensions.swift in Sources */,
 				4E8C24102040A1ED00A937FE /* ResponseModel.swift in Sources */,
+				4EF539D72042060D00AE9B31 /* FilterViewModel.swift in Sources */,
 				4EF539C22041DAE400AE9B31 /* FilterModel.swift in Sources */,
 				4EF539C52041DCFC00AE9B31 /* FilterViewController.swift in Sources */,
 				4E8C240C2040A01800A937FE /* ServiceManager.swift in Sources */,
 				4E8C24142040A6FA00A937FE /* UIViewController+Extensions.swift in Sources */,
 				4E8C24182040A7A900A937FE /* LoadingView.swift in Sources */,
 				4E8C24232040AE9200A937FE /* BaseCellViewModel.swift in Sources */,
+				4EF539D92042064800AE9B31 /* FilterCellViewModel.swift in Sources */,
 				4E8C242B2040B40600A937FE /* LaunchCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
