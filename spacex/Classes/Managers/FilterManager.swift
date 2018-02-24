@@ -19,6 +19,7 @@ class FilterManager {
     var numberOfYears: Int = 0
     
     func loaded(launchs: [LaunchModel]) {
+        filteredModel.remove()
         self.model.years = [String]()
         let allYears = launchs.lazy.map { (launch) -> String in
             if let year = launch.year {
@@ -56,9 +57,10 @@ class FilterManager {
         
         switch sort {
         case .ascending:
+            
             let sorted = lazyLaunchs.sorted(by: { (first, second) -> Bool in
-                if let year1 = first.year, let year2 = second.year {
-                    return year1 < year2
+                if let date1 = first.dateUtc?.utcDate, let date2 = second.dateUtc?.utcDate {
+                    return date1 < date2
                 }
                 return false
             })
@@ -69,8 +71,8 @@ class FilterManager {
         case .descending:
             
             let sorted = lazyLaunchs.sorted(by: { (first, second) -> Bool in
-                if let year1 = first.year, let year2 = second.year {
-                    return year1 > year2
+                if let date1 = first.dateUtc?.utcDate, let date2 = second.dateUtc?.utcDate {
+                    return date1 > date2
                 }
                 return false
             })
