@@ -27,6 +27,9 @@ class LaunchCollectionViewCell: UICollectionViewCell {
         imageContainerView.layer.masksToBounds = true
         dateLabel.layer.cornerRadius = 3.0
         dateLabel.layer.masksToBounds = true
+        
+        highlightedView.layer.borderWidth = 0.5
+        highlightedView.layer.borderColor = UIColor.groupTableViewBackground.cgColor
 
     }
     
@@ -70,7 +73,7 @@ extension LaunchCollectionViewCell {
         dateLabel.text = vm.dateText
         imageView.image = nil
         if let url = vm.imageURL {
-            imageView.af_setImage(withURL: url)
+            imageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "spaceX_icon"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.flipFromTop(0.2), runImageTransitionIfCached: true, completion: nil)
         }
     }
 }
