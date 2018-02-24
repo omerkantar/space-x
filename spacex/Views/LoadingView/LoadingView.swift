@@ -41,9 +41,10 @@ class LoadingView: UIView {
 // MARK: - Build
 fileprivate extension LoadingView {
     func build(title: String?, parentView: UIView) {
-        self.titleLabel.text = title ?? "LOADING..."
+        self.titleLabel.text = title ?? "Loading..."
         self.activityIndicatorView.startAnimating()
         parentView.addSubview(self)
         self.center = parentView.center
+        self.center.y = 200.0
     }
 }

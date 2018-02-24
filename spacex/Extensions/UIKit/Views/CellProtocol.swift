@@ -12,7 +12,6 @@ protocol ViewCellProtocol: NSObjectProtocol {
     func build(viewModel: BaseCellViewModel) -> Void
 }
 
-
 protocol ViewCellTypeProtocol {
     var identifier: String { get }
     var nibName: String { get }
@@ -24,6 +23,6 @@ extension UITableViewCell: ViewCellProtocol {
     @objc func build(viewModel: BaseCellViewModel) { }
 }
 
-extension UICollectionView: ViewCellProtocol {
+extension UICollectionViewCell: ViewCellProtocol {
     @objc func build(viewModel: BaseCellViewModel) { }
 }

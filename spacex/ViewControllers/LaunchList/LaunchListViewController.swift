@@ -31,8 +31,6 @@ class LaunchListViewController: UIViewController {
         tableView.delegate = self
         tableView.reloadData()
     }
-
-
 }
 
 // MARK: - UITableViewDataSource

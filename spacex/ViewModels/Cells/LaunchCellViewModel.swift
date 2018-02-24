@@ -25,7 +25,14 @@ class LaunchCellViewModel: BaseCellViewModel {
     
     init(launch: LaunchModel) {
         self.dateText = launch.dateUtc?.utcDate?.string
-        self.rocketName = launch.rocketModel?.name
+        var text = ""
+        if let name = launch.rocketModel?.name {
+            text = name + "\n"
+        }
+        if let type = launch.rocketModel?.type {
+            text += type
+        }
+        self.rocketName = text
         self.imageURL = launch.linksModel?.missionPatch?.url
     }
 }
