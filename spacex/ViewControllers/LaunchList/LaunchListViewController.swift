@@ -14,7 +14,7 @@ class LaunchListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var cellVMs = [LaunchCellViewModel]()
+    var viewModel = LaunchListViewModel()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -24,11 +24,7 @@ class LaunchListViewController: UIViewController {
     }
 
     func buildTableView() {
-        
-        for _ in 0..<30 {
-            cellVMs.append(LaunchCellViewModel())
-        }
-        
+    
         tableView.build()
         tableView.register(.launch)
         tableView.dataSource = self
@@ -42,11 +38,11 @@ class LaunchListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension LaunchListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellVMs.count
+        return viewModel.filteredCellVMs?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let vm = cellVMs[indexPath.row]
+        let vm = viewModel.filteredCellVMs?[indexPath.row]
         let cell = tableView.dequeue(.launch, indexPath: indexPath, viewModel: vm)
         return cell
     }
@@ -54,7 +50,7 @@ extension LaunchListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension LaunchListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        return 185.0
     }
 }
 
@@ -62,9 +58,14 @@ extension LaunchListViewController: UITableViewDelegate {
 extension LaunchListViewController {
     func loadData() {
         request(target: .launches, loadingParentView: self.tableView, success: { (model) in
-            
+            self.loadedData(model: model)
         }) { (error, model) in
             
         }
+    }
+    
+    func loadedData(model: ResponseModel) {
+        self.viewModel.build(responseModel: model)
+        self.tableView.reloadData()
     }
 }

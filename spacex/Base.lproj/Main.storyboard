@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RiI-qu-9NM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,8 +9,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Launch List View Controller-->
+        <!--Launch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LaunchListViewController" customModule="spacex" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nHM-jd-bcb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -32,27 +37,80 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Launch" id="Sj7-5l-5dC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Der-C7-b8j"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kub-A7-qdc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sg6-nZ-70x">
+                                <rect key="frame" x="276" y="2" width="83" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Filter"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="nHM-jd-bcb" id="UoQ-80-3BI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="670" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="9K1-46-lA2">
+            <objects>
+                <navigationController id="RiI-qu-9NM" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5Ki-yM-GWF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
+                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uka-lw-Zdi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHf-wm-F03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="133"/>
+        </scene>
+        <!--Filter View Controller-->
         <scene sceneID="u4Y-Fy-imA">
             <objects>
-                <viewController id="geu-M4-6Zv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="filterVC" id="geu-M4-6Zv" customClass="FilterViewController" customModule="spacex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zbm-QP-Viv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="en2-dj-uGm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CAb-Xt-NWg" firstAttribute="bottom" secondItem="en2-dj-uGm" secondAttribute="bottom" id="Nvx-Vb-w0a"/>
+                            <constraint firstItem="en2-dj-uGm" firstAttribute="leading" secondItem="CAb-Xt-NWg" secondAttribute="leading" id="NzS-0X-bdX"/>
+                            <constraint firstItem="CAb-Xt-NWg" firstAttribute="trailing" secondItem="en2-dj-uGm" secondAttribute="trailing" id="TAQ-SO-idd"/>
+                            <constraint firstItem="en2-dj-uGm" firstAttribute="top" secondItem="CAb-Xt-NWg" secondAttribute="top" id="lpJ-2q-M4H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CAb-Xt-NWg"/>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="eGH-Vw-nuJ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fZy-If-uoJ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpc-tU-PmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="813"/>
+            <point key="canvasLocation" x="1548" y="133"/>
         </scene>
     </scenes>
 </document>

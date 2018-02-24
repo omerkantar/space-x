@@ -22,4 +22,10 @@ class LaunchCellViewModel: BaseCellViewModel {
         self.rocketName = "Falcon 9"
         self.imageURL = "https://loremflickr.com/\(width)/\(height)".url
     }
+    
+    init(launch: LaunchModel) {
+        self.dateText = launch.dateUtc?.utcDate?.string
+        self.rocketName = launch.rocketModel?.name
+        self.imageURL = launch.linksModel?.missionPatch?.url
+    }
 }
