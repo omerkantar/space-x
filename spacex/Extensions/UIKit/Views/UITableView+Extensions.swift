@@ -43,6 +43,8 @@ extension UITableView {
         case coffee
         case launch
         case filter
+        case launchDetail
+        case launchLink
         // Acikcasi identifier ile nibName ayni string kullanilmasinda hic bir sakinca gormedigimden boyle yaptim istenildigi vakit degistiriline bilinir 
         var identifier: String {
             switch self {
@@ -50,6 +52,10 @@ extension UITableView {
                 return String(describing: LauchTableViewCell.self)
             case .filter:
                 return String(describing: FilterTableViewCell.self)
+            case .launchDetail:
+                return String(describing: LaunchDescriptionTableViewCell.self)
+            case .launchLink:
+                return String(describing: LaunchLinkTableViewCell.self)
             default:
                 break
             }

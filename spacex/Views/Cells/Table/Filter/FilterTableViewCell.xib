@@ -41,11 +41,21 @@
                             <constraint firstAttribute="trailing" secondItem="ugs-nB-RIF" secondAttribute="trailing" constant="12" id="n9F-Yo-pi6"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbr-2V-Zkg">
+                        <rect key="frame" x="20" y="43.5" width="335" height="0.0"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Z2m-fl-VlE"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="sVC-8M-0tN" secondAttribute="trailing" constant="8" id="DmN-7k-S1P"/>
                     <constraint firstAttribute="bottom" secondItem="sVC-8M-0tN" secondAttribute="bottom" constant="3" id="EjQ-ot-w1t"/>
                     <constraint firstItem="sVC-8M-0tN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="J6v-Yp-sdJ"/>
+                    <constraint firstAttribute="bottom" secondItem="jbr-2V-Zkg" secondAttribute="bottom" id="NE2-hI-BP9"/>
+                    <constraint firstAttribute="trailing" secondItem="jbr-2V-Zkg" secondAttribute="trailing" constant="-35" id="ciW-pw-v3U"/>
+                    <constraint firstItem="jbr-2V-Zkg" firstAttribute="leading" secondItem="ugs-nB-RIF" secondAttribute="leading" id="fMY-XJ-KPH"/>
                     <constraint firstItem="sVC-8M-0tN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mWC-MX-G4S"/>
                 </constraints>
             </tableViewCellContentView>

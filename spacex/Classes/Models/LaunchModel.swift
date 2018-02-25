@@ -30,4 +30,5 @@ class LaunchModel: Mappable {
         rocketModel <- map["rocket"]
         linksModel <- map["links"]
     }
+   
 }

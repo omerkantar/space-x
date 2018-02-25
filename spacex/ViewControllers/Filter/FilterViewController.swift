@@ -53,6 +53,7 @@ class FilterViewController: UIViewController {
         viewModel.build()
         tableView.build()
         tableView.register(.filter)
+        tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 55.0, 0.0)
         tableView.dataSource = self
         tableView.delegate = self
         showBottomViewIfNeeded()
@@ -110,9 +111,9 @@ extension FilterViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if viewModel.isSortViewModel(indexPath: IndexPath(row: 0, section: section)) {
-            return "SORTING"
+            return "SORT BY DATE"
         }
-        return "YEARS"
+        return "FILTER YEARS"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

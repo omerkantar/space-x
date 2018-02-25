@@ -24,4 +24,16 @@ class RocketModel: Mappable {
         name <- map["rocket_name"]
         type <- map["rocket_type"]
     }
+    
+    
+    var titleText: String {
+        var text = ""
+        if let name = name {
+            text = name + "\n"
+        }
+        if let type = type {
+            text += type
+        }
+        return text
+    }
 }

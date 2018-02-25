@@ -56,7 +56,16 @@ class LaunchCollectionViewController: CommonCollectionViewController {
 extension LaunchCollectionViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        guard let vm = viewModel.filteredCellVMs?[indexPath.row] else {
+            return
+        }
         
+        let nc = self.storyboard?.instantiateViewController(withIdentifier: "detailNC") as! UINavigationController
+        
+        if let vc = nc.viewControllers.first as? LaunchDetailViewController {
+            vc.launch = vm.model
+            present(nc, animated: true, completion: nil)
+        }
     }
 }
 
