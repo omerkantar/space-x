@@ -101,17 +101,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-Vf-IKX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jA-w9-iJi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ghM-Vf-IKX" firstAttribute="top" secondItem="O8a-YQ-520" secondAttribute="top" id="9kg-ZT-WP4"/>
-                            <constraint firstItem="O8a-YQ-520" firstAttribute="trailing" secondItem="ghM-Vf-IKX" secondAttribute="trailing" id="FLl-sj-hzF"/>
-                            <constraint firstItem="O8a-YQ-520" firstAttribute="bottom" secondItem="ghM-Vf-IKX" secondAttribute="bottom" id="VC5-UD-oGE"/>
-                            <constraint firstItem="ghM-Vf-IKX" firstAttribute="leading" secondItem="O8a-YQ-520" secondAttribute="leading" id="fqY-1H-D5K"/>
+                            <constraint firstItem="2jA-w9-iJi" firstAttribute="top" secondItem="O8a-YQ-520" secondAttribute="top" id="Fwr-vh-unP"/>
+                            <constraint firstItem="O8a-YQ-520" firstAttribute="bottom" secondItem="2jA-w9-iJi" secondAttribute="bottom" id="Zck-EY-sEE"/>
+                            <constraint firstItem="O8a-YQ-520" firstAttribute="trailing" secondItem="2jA-w9-iJi" secondAttribute="trailing" id="eDy-KV-LFJ"/>
+                            <constraint firstItem="2jA-w9-iJi" firstAttribute="leading" secondItem="O8a-YQ-520" secondAttribute="leading" id="joT-wU-we3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8a-YQ-520"/>
                     </view>
@@ -129,7 +129,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="ghM-Vf-IKX" id="7OF-KQ-Q46"/>
+                        <outlet property="containerView" destination="2jA-w9-iJi" id="6Zf-NC-8ty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJk-q0-fQN" userLabel="First Responder" sceneMemberID="firstResponder"/>

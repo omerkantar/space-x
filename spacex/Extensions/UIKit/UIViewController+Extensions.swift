@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 // MARK: Push
 extension UIViewController {
@@ -16,6 +17,11 @@ extension UIViewController {
     
     func popVC(_ animated: Bool = true) {
         self.navigationController?.popViewController(animated: animated)
+    }
+    
+    func presentWebVC(url: URL) {
+        let vc = SFSafariViewController(url: url)
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

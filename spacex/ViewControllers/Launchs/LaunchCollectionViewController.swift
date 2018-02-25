@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - Isimlendirme secerken eger list geciyorsa kelime kokune cogul eki eklemiyorum cunku list anlami coguldur. Or: OgrencilerListesi anlami sanki listenin icinde ogrenciler varmis gibi [["Ali", "Mehmet"], ["Ayse"]] gibi. Ama OgrenciListesi daha tek liste gibi ["Ali", "Mehmet"] olur. Kelime secerken baya detaya indim 🙈
+// MARK: - Isimlendirme secerken eger list/collection geciyorsa kelime kokune cogul eki eklemiyorum cunku list anlami coguldur. Or: OgrencilerListesi anlami sanki listenin icinde ogrenciler varmis gibi [["Ali", "Mehmet"], ["Ayse"]] gibi. Ama OgrenciListesi daha tek liste gibi ["Ali", "Mehmet"] olur. Kelime secerken baya detaya indim 🙈
 
 class LaunchCollectionViewController: CommonCollectionViewController {
 
@@ -58,14 +58,15 @@ class LaunchCollectionViewController: CommonCollectionViewController {
 extension LaunchCollectionViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        guard let vm = viewModel.filteredCellVMs?[indexPath.row] else {
+        guard let allLaunchs = viewModel.allLaunchs else {
             return
         }
         
         let nc = self.storyboard?.instantiateViewController(withIdentifier: "detailNC") as! UINavigationController
         
         if let vc = nc.viewControllers.first as? LaunchDetailViewController {
-            vc.launch = vm.model
+            vc.launchs = allLaunchs
+            vc.currentIndex = indexPath.row
             present(nc, animated: true, completion: nil)
         }
     }

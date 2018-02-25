@@ -11,6 +11,7 @@ import ObjectMapper
 
 class LaunchModel: Mappable {
 
+    var flightNumber: Int = 0
     var year: String?
     var dateUnix: TimeInterval = 0.0
     var dateUtc: String?
@@ -22,6 +23,7 @@ class LaunchModel: Mappable {
     required init?(map: Map) { }
     
     func mapping(map: Map) {
+        flightNumber <- map["flight_number"]
         year <- map["launch_year"]
         dateUnix <- map["launch_date_unix"]
         dateUtc <- map["launch_date_utc"]

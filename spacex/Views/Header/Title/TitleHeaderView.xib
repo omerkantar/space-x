@@ -35,7 +35,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.98836660858902647" green="0.98359189067313746" blue="0.99314132650491549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.97763166618371611" green="0.97290880789297352" blue="0.9823545244744587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="PgF-GB-w8Q" firstAttribute="leading" secondItem="S5J-r7-91m" secondAttribute="leading" constant="20" id="3AX-Dm-Oyc"/>
                 <constraint firstItem="PgF-GB-w8Q" firstAttribute="centerY" secondItem="As0-Sh-pkY" secondAttribute="centerY" id="8xU-4o-SJ5"/>

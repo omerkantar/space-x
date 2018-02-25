@@ -10,11 +10,11 @@ import UIKit
 
 class LaunchDetailViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var containerView: UIView!
     
-    var launch: LaunchModel?
-    var viewModel: LaunchDetailViewModel?
-    var videoHeaderView: LaunchVideoHeaderView?
+    var pageController: UIPageViewController?
+    var currentIndex: Int = 0
+    var launchs: [LaunchModel]?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -24,23 +24,37 @@ class LaunchDetailViewController: UIViewController {
 
     // MARK: - Build
     func build() {
-        if let launch = launch {
-            self.viewModel = LaunchDetailViewModel(launch: launch)
+        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        pageController?.dataSource = self
+        pageController?.delegate = self
+        pageController?.automaticallyAdjustsScrollViewInsets = false
+
+        guard let pageController = pageController else {
+            return
         }
-        buildTableView()
+        
+        self.containerView.addSubview(pageController.view)
+        self.addChildViewController(pageController)
+
+        if let vc = tableViewController(index: currentIndex) {
+            pageController.setViewControllers([vc],
+                               direction: .forward,
+                               animated: false,
+                               completion: nil)
+        }
+        
+        DispatchQueue.main.async {
+            pageController.view.frame = CGRect(origin: CGPoint.zero, size: self.containerView.frame.size)
+        }
     }
     
-    func buildTableView() {
-        tableView.build()
-        tableView.register(.launchDetail)
-        tableView.register(.launchLink)
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        if let url = viewModel?.videoURL {
-            videoHeaderView = LaunchVideoHeaderView.create(videoURL: url)
-            tableView.tableHeaderView = videoHeaderView
+    func tableViewController(index: Int) -> LaunchDetailTableViewController? {
+        guard let launch = launchs?[index] else {
+            return nil
         }
+        let vc = LaunchDetailTableViewController()
+        vc.launch = launch
+        return vc
     }
     
     // MARK: - Action
@@ -50,65 +64,41 @@ class LaunchDetailViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension LaunchDetailViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.numberOfSections ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfRows(section: section) ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let type = viewModel?.tableViewCellType(indexPath: indexPath), let vm = viewModel else {
-            return UITableViewCell()
+extension LaunchDetailViewController: UIPageViewControllerDataSource {
+    func nextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
+        
+        guard let vc = viewController as? LaunchDetailTableViewController, let launch = vc.launch else {
+            return nil
         }
         
-        switch type.cellType {
-        case .launchLink:
-            let cell = tableView.dequeue(type.cellType, indexPath: indexPath)
-            if type.cellType == .launchLink {
-                (cell as! LaunchLinkTableViewCell).titleLabel.text = type.title
-            }
-            return cell
-        case .launchDetail:
-            let cell = tableView.dequeue(type.cellType, indexPath: indexPath, viewModel: vm)
-            return cell
-        default:
-            return UITableViewCell()
+        guard var index = launchs?.index(where: { $0.flightNumber == launch.flightNumber })  else {
+            return nil
         }
+        
+        if isAfter {
+            index += 1
+        } else {
+            index -= 1
+        }
+        
+        if let vc = tableViewController(index: index) {
+            currentIndex = index
+            return vc
+        }
+        return nil
+    }
+    
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return nextViewController(viewController, isAfter: false)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return nextViewController(viewController, isAfter: true)
     }
 }
 
 // MARK: - UITableViewDelegate
-extension LaunchDetailViewController: UITableViewDelegate {
+extension LaunchDetailViewController: UIPageViewControllerDelegate {
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section != 1 {
-            return nil
-        }
-        let headerView = TitleHeaderView.create(LaunchDetailViewModel.LaunchDetailTableViewCellType.links.title)
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 50.0
-        }
-        return 0.0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableViewAutomaticDimension
-        }
-        return 45.0
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 120.0
-        }
-        return 45.0
-    }
 }
