@@ -29,5 +29,5 @@ We want you to write a small application using the SpaceX-API.
 - There is no obligation about list and detail screen design, you can configure this screen as you like.
  
 ### Screen Record
-[Screen Video Link](https://raw.githubusercontent.com/omerkantar/space-x/master/Video.MOV)
+[Screen Video Link](https://raw.githubusercontent.com/omerkantar/space-x/master/video560.mp4)
 
