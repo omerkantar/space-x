@@ -27,12 +27,19 @@ fileprivate extension LaunchVideoHeaderView {
     func build(videoURL: URL) {
         webView.delegate = self
         webView.loadRequest(URLRequest(url: videoURL))
+        webView.allowsInlineMediaPlayback = true
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.scrollView.isScrollEnabled = false
         webView.scrollView.alwaysBounceHorizontal = false
         webView.scrollView.alwaysBounceVertical = false
     }
+    
+    func html(url: URL) -> String {
+        return "<iframe width=\"\(self.bounds.width)\" height=\"\(self.bounds.height)\" src=\"\(url.absoluteString)\" frameborder=\"0\" allowfullscreen></iframe>"
+    }
+    
+    
 }
 
 // MARK: - UIWebViewDelegate

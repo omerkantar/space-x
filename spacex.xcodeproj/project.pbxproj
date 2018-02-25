@@ -54,6 +54,8 @@
 		4EF539F72042DFAE00AE9B31 /* TitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF539F52042DFAE00AE9B31 /* TitleHeaderView.xib */; };
 		4EF539FB2042EF9800AE9B31 /* LaunchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539F92042EF9800AE9B31 /* LaunchDetailTableViewController.swift */; };
 		4EF539FC2042EF9800AE9B31 /* LaunchDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF539FA2042EF9800AE9B31 /* LaunchDetailTableViewController.xib */; };
+		4EF53A0020431F5700AE9B31 /* BlurMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF539FE20431F5700AE9B31 /* BlurMessageView.swift */; };
+		4EF53A0120431F5700AE9B31 /* BlurMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF539FF20431F5700AE9B31 /* BlurMessageView.xib */; };
 		BA12710698C1018D6D4BACCB /* Pods_spacex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */; };
 		D4C6B8A030E6A141804432B6 /* Pods_spacexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +136,8 @@
 		4EF539F52042DFAE00AE9B31 /* TitleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleHeaderView.xib; sourceTree = "<group>"; };
 		4EF539F92042EF9800AE9B31 /* LaunchDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailTableViewController.swift; sourceTree = "<group>"; };
 		4EF539FA2042EF9800AE9B31 /* LaunchDetailTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchDetailTableViewController.xib; sourceTree = "<group>"; };
+		4EF539FE20431F5700AE9B31 /* BlurMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurMessageView.swift; sourceTree = "<group>"; };
+		4EF539FF20431F5700AE9B31 /* BlurMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlurMessageView.xib; sourceTree = "<group>"; };
 		9C02854162EB4D2925513BED /* Pods_spacexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA29E1320BC48DAD8A8B1EAF /* Pods-spacexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spacexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spacexTests/Pods-spacexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D60C31EDB7C75AA61A059E /* Pods_spacex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spacex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +254,7 @@
 			children = (
 				4EF539ED2042CD2400AE9B31 /* Header */,
 				4E8C24242040AF8C00A937FE /* Cells */,
+				4EF539FD20431F3600AE9B31 /* Message */,
 				4E8C24152040A78700A937FE /* LoadingView */,
 			);
 			path = Views;
@@ -491,6 +496,15 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		4EF539FD20431F3600AE9B31 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				4EF539FE20431F5700AE9B31 /* BlurMessageView.swift */,
+				4EF539FF20431F5700AE9B31 /* BlurMessageView.xib */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		AE2DFAACB96DC9C8F562B92D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +649,7 @@
 				4EF539F72042DFAE00AE9B31 /* TitleHeaderView.xib in Resources */,
 				4EF539FC2042EF9800AE9B31 /* LaunchDetailTableViewController.xib in Resources */,
 				4E8C23D92040979A00A937FE /* LaunchScreen.storyboard in Resources */,
+				4EF53A0120431F5700AE9B31 /* BlurMessageView.xib in Resources */,
 				4EF539E62042CAE200AE9B31 /* LaunchDescriptionTableViewCell.xib in Resources */,
 				4EF539DF204217F100AE9B31 /* FilterTableViewCell.xib in Resources */,
 				4E8C24192040A7A900A937FE /* LoadingView.xib in Resources */,
@@ -826,6 +841,7 @@
 				4EF539CD2041EB8E00AE9B31 /* LaunchCollectionViewCell.swift in Sources */,
 				4EF539D42041FA2900AE9B31 /* LaunchCollectionViewController.swift in Sources */,
 				4EF539F12042CD4A00AE9B31 /* LaunchVideoHeaderView.swift in Sources */,
+				4EF53A0020431F5700AE9B31 /* BlurMessageView.swift in Sources */,
 				4EF539E52042CAE200AE9B31 /* LaunchDescriptionTableViewCell.swift in Sources */,
 				4EF539EB2042CB0800AE9B31 /* LaunchLinkTableViewCell.swift in Sources */,
 				4EF539C92041E8DB00AE9B31 /* Date+Extensions.swift in Sources */,

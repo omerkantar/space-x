@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Launch-->
+        <!--Launchs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LaunchCollectionViewController" customModule="spacex" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Launch" id="Sj7-5l-5dC">
+                    <navigationItem key="navigationItem" title="Launchs" id="Sj7-5l-5dC">
                         <barButtonItem key="backBarButtonItem" title=" " id="Der-C7-b8j"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="kub-A7-qdc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sg6-nZ-70x">

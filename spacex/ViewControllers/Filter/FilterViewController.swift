@@ -123,5 +123,8 @@ extension FilterViewController: UITableViewDelegate {
         changedFilter = true
         tableView.reloadData()
         showBottomViewIfNeeded()
+        BlurMessageView.show(title: "Successful filter updated, you can go to back, launchs screens. 🚀") { (title) in
+            self.popVC()
+        }
     }
 }
