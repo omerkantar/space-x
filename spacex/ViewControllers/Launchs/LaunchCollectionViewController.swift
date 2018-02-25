@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Isimlendirme secerken eger list geciyorsa kelime kokune cogul eki eklemiyorum cunku list anlami coguldur. Or: OgrencilerListesi anlami sanki listenin icinde ogrenciler varmis gibi [["Ali", "Mehmet"], ["Ayse"]] gibi. Ama OgrenciListesi daha tek liste gibi ["Ali", "Mehmet"] olur. Kelime secerken baya detaya indim 🙈
+
 class LaunchCollectionViewController: CommonCollectionViewController {
 
     var viewModel = LaunchListViewModel()
