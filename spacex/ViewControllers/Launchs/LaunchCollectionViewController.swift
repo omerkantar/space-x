@@ -58,14 +58,14 @@ class LaunchCollectionViewController: CommonCollectionViewController {
 extension LaunchCollectionViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        guard let allLaunchs = viewModel.allLaunchs else {
+        guard let displayLaunchs = viewModel.displayLaunchs else {
             return
         }
         
         let nc = self.storyboard?.instantiateViewController(withIdentifier: "detailNC") as! UINavigationController
         
         if let vc = nc.viewControllers.first as? LaunchDetailViewController {
-            vc.launchs = allLaunchs
+            vc.launchs = displayLaunchs
             vc.currentIndex = indexPath.row
             present(nc, animated: true, completion: nil)
         }

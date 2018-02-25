@@ -49,9 +49,18 @@ class LaunchDetailViewController: UIViewController {
     }
     
     func tableViewController(index: Int) -> LaunchDetailTableViewController? {
-        guard let launch = launchs?[index] else {
+        
+        if index < 0 {
             return nil
         }
+        
+        guard let launchs = launchs else {
+            return nil
+        }
+        if launchs.count - 1 < index {
+            return nil
+        }
+        let launch = launchs[index]
         let vc = LaunchDetailTableViewController()
         vc.launch = launch
         return vc
