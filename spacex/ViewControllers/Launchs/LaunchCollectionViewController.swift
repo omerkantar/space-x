@@ -16,6 +16,7 @@ class LaunchCollectionViewController: CommonCollectionViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
+        self.title = "Launchs"
         super.viewDidLoad()
         loadData()
     }
